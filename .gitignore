@@ -1,3 +1,5 @@
 /input-data
 .venv
 .DS_Store
+/data/images/
+*.onnx

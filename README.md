@@ -7,20 +7,30 @@ The following collection of notebooks is part of the [Panopticum News Project](h
     └── 📁data
         └── categories-over-time.json
         └── network.json
-    └── 📁src
+    └── 📁notebooks
+        └── 📁categories
+            └── relational-categories.ipynb
+            └── temporal-overview.ipynb
+        └── 📁images
+            └── download.ipynb
         └── create-temp-data.ipynb
-        └── relational-categories.ipynb
-        └── temporal-overview.ipynb
     └── README.md
 
 
 The `src` folder contains the Jupyter Notebooks. The `data` folder contains the exported data.
 
-### ./src/create-temp-data.ipynb
+### ./notebooks/create-temp-data.ipynb
 Assuming the existance of a folder named `input-data` that contains separate `.json` files for each month of coverage, this notebook simply loads and concatenate all the files and exports a dataset called `temp-data.json` in the same folder. This data will be used within the notebooks to analyze the full coverage.
 
-### ./src/relational-categories.ipynb
+## Categories
+
+### ./notebooks/categories/relational-categories.ipynb
 The notebook can be used to prepare relational data about article categories. The idea is to treat each category as the node of a possible network and compute the overlap between all existing pairs between categories to use them as links. The approach is rather crude and will probably evolve over time. More details in the notebook. The resulting dataset is stored at `./data/network.json`.
 
-### ./src/temporal-overview.ipynb
+### ./notebooks/categories/temporal-overview.ipynb
 The notebook can be used to analyze the volume and freqency of coverage. It aggregates individual articles along categories, retaining information about the news outlet section to allow future filter operations. The resulting dataset is stored ar `./data/categories-over-time.json`.
+
+## Images
+
+### ./notebooks/images/download.ipynb
+The notebook should be used to download the corpus of images for the analysis. It creates a subfolder in `data` called `images/nytimes` and saves the images there. By design, the images will not be committed in the GitHub repo. 

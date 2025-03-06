@@ -5,14 +5,25 @@ The following collection of notebooks is part of the [Panopticum News Project](h
 
 ## Structure of the folder
     └── 📁data
-        └── categories-over-time.json
-        └── network.json
+        └── 📁categories
+            └── categories-over-time.json
+            └── network.json
+        └── 📁places
+            └── nyt-coverage-places.json
+            └── nyt-sum-places.json
+            └── top_keywords_by_location.json
     └── 📁notebooks
         └── 📁categories
+            └── places-top-keywords.ipynb
+            └── places.ipynb
             └── relational-categories.ipynb
             └── temporal-overview.ipynb
+            └── unique_keywords.txt
         └── 📁images
             └── download.ipynb
+            └── face-recognition.ipynb
+            └── 📁utils
+                └── face_detection_yunet_2023mar.onnx
         └── create-temp-data.ipynb
     └── README.md
 
@@ -34,3 +45,11 @@ The notebook can be used to analyze the volume and freqency of coverage. It aggr
 
 ### ./notebooks/images/download.ipynb
 The notebook should be used to download the corpus of images for the analysis. It creates a subfolder in `data` called `images/nytimes` and saves the images there. By design, the images will not be committed in the GitHub repo. 
+
+## Places
+
+### ./notebooks/images/places.ipynb
+The notebook can be used to find out how many times the NYT coverage references a place, by creating a list of countries and US states to test against the keywords used in articles. The notebook outputs the dataset `nyt_coverage_places` where all the categories related to a certain place are included, as well as the timeline of mentions for a certain country. 
+
+### ./notebooks/images/places-top-keywords.ipynb
+The notebook returns the file `top_keywords_by_location.json` where only the top 20 categories for each location are kept, along with the amount of times each category is mentioned in relation to the total count of articles.

@@ -20,10 +20,10 @@ The following collection of notebooks is part of the [Panopticum News Project](h
             └── temporal-overview.ipynb
             └── unique_keywords.txt
         └── 📁images
-            └── download.ipynb
+            └── prepare-img-download.ipynb
             └── face-recognition.ipynb
-            └── 📁utils
-                └── face_detection_yunet_2023mar.onnx
+            └── get-images.sh
+            └── 📁assets
         └── create-temp-data.ipynb
     └── README.md
 
@@ -43,8 +43,18 @@ The notebook can be used to analyze the volume and freqency of coverage. It aggr
 
 ## Images
 
-### ./notebooks/images/download.ipynb
-The notebook should be used to download the corpus of images for the analysis. It creates a subfolder in `data` called `images/nytimes` and saves the images there. By design, the images will not be committed in the GitHub repo. 
+### ./notebooks/images/prepare-img-download.ipynb
+The notebook should be used to prepare the csv file to download images. It creates a csv called `nyt_image_urls.csv` in the `input_data` folder, where only two columns are retained: `clean_id` (used for consistent naming) and `image_url` (used to download the image).
+
+### ./notebooks/images/get-images.sh
+The script can be run in the terminal and downloads all images contained in the `nyt_image_urls.csv`.
+Make it executable:
+``` chmod +x get-images.sh ```
+Run:
+``` bash get-images.sh ../../input-data/nyt-image-urls.csv ```
+
+### ./notebooks/images/face-recognition.ipynb
+The notebook introduces a top-down technique for face recognition. Currently work in progress.
 
 ## Places
 

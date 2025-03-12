@@ -9,7 +9,7 @@ fi
 CSV_FILE="$1"
 BASE_URL="https://www.nytimes.com/"
 # Create the directory if it doesn't exist
-mkdir -p "../../data/images/nyt/"
+mkdir -p "../../data/images/nytimes/"
 
 # Read CSV file line by line, skipping the header
 { read; while IFS=, read -r clean_id image_url; do

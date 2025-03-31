@@ -71,11 +71,3 @@ The notebook introduces a top-down technique for face recognition. Currently wor
 
 ### ./notebooks/categories/temporal-overview.ipynb
 The notebook can be used to analyze the volume and freqency of coverage. It aggregates individual articles along categories, retaining information about the news outlet section to allow future filter operations. The resulting dataset is stored ar `./data/categories-over-time.json`.
-
-## Places
-
-### ./notebooks/images/places.ipynb
-The notebook can be used to find out how many times the NYT coverage references a place, by creating a list of countries and US states to test against the keywords used in articles. The notebook outputs the dataset `nyt_coverage_places` where all the categories related to a certain place are included, as well as the timeline of mentions for a certain country. 
-
-### ./notebooks/images/places-top-keywords.ipynb
-The notebook returns the file `top_keywords_by_location.json` where only the top 20 categories for each location are kept, along with the amount of times each category is mentioned in relation to the total count of articles.

@@ -14,16 +14,18 @@ The following collection of notebooks is part of the [Panopticum News Project](h
             └── top_keywords_by_location.json
     └── 📁notebooks
         └── 📁categories
-            └── places-top-keywords.ipynb
+            └── keywords_places.ipynb
+            └── keywords-structure.ipynb
+            └── places-analysis.ipynb
+            └── places-countries-kws.ipynb
             └── places.ipynb
-            └── relational-categories.ipynb
-            └── temporal-overview.ipynb
-            └── unique_keywords.txt
         └── 📁images
             └── prepare-img-download.ipynb
             └── face-recognition.ipynb
             └── get-images.sh
             └── 📁assets
+        └── 📁other  
+            └── temporal-overview.ipynb
         └── create-temp-data.ipynb
     └── README.md
 
@@ -35,11 +37,20 @@ Assuming the existance of a folder named `input-data` that contains separate `.j
 
 ## Categories
 
-### ./notebooks/categories/relational-categories.ipynb
-The notebook can be used to prepare relational data about article categories. The idea is to treat each category as the node of a possible network and compute the overlap between all existing pairs between categories to use them as links. The approach is rather crude and will probably evolve over time. More details in the notebook. The resulting dataset is stored at `./data/network.json`.
+### ./notebooks/categories/keywords_places.ipynb
+**!Work in progress** The notebook proposes a way to select groups of topics starting from common keywords.
 
-### ./notebooks/categories/temporal-overview.ipynb
-The notebook can be used to analyze the volume and freqency of coverage. It aggregates individual articles along categories, retaining information about the news outlet section to allow future filter operations. The resulting dataset is stored ar `./data/categories-over-time.json`.
+### ./notebooks/categories/keywords-structure.ipynb
+**!Work in progress** Using the NYT categorization system, the notebook looks in all possible combination of keywords.
+
+### ./notebooks/categories/places-analysis.ipynb
+Calculates the delta of coverage for each country, based on the comparison between Zeit and NYT data. Then, it extracts all keywords related to places and create a dictionary "keyword": "value, where value is the amount of times a specific keyword appears for each country.
+
+### ./notebooks/categories/places-countries-kws.ipynb
+Extracts the top mentioned countries for both newspapers, then goes one level down and explores the use of keywords related to those countries.
+
+### ./notebooks/categories/places.ipynb
+Finds and merges together all instances of places for NYT and Zeit data.
 
 ## Images
 
@@ -55,6 +66,11 @@ Run:
 
 ### ./notebooks/images/face-recognition.ipynb
 The notebook introduces a top-down technique for face recognition. Currently work in progress.
+
+## Other
+
+### ./notebooks/categories/temporal-overview.ipynb
+The notebook can be used to analyze the volume and freqency of coverage. It aggregates individual articles along categories, retaining information about the news outlet section to allow future filter operations. The resulting dataset is stored ar `./data/categories-over-time.json`.
 
 ## Places
 

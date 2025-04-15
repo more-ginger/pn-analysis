@@ -5,3 +5,4 @@
 /notebooks/categories/local
 *.onnx
 *.sqlite
+.env
